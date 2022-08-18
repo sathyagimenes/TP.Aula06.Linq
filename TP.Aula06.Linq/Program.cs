@@ -100,11 +100,9 @@ namespace TP.Aula06.Linq
             
             WriteLine("Questão 6: ");
             Write("Qual o id? ");
-            int id = 0;
-            id = Convert.ToInt32(ReadLine());
+            int id = Convert.ToInt32(ReadLine());
             Write("Qual o valor? ");
-            decimal valor = 0;
-            valor = Convert.ToDecimal(ReadLine());
+            decimal valor = Convert.ToDecimal(ReadLine());
             AlterarValor(id, valor);
         }
     }
