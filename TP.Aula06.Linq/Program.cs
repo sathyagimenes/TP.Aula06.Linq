@@ -3,7 +3,6 @@ using System.Linq;
 
 namespace TP.Aula06.Linq
 {
-
     class Program
     {
         private static List<Produto> listaProdutos = new(){
