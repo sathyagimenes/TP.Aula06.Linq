@@ -83,21 +83,18 @@ namespace TP.Aula06.Linq
             }
         }
 
-
         static void Main(string[] args)
         {
             WriteLine("Questão 1: ");
-           var resultado = RetornaProdutoFinalLetraO();
+            var resultado = RetornaProdutoFinalLetraO();
             foreach (var res in resultado)
             {
                 WriteLine(res);
             }
-            
             WriteLine("Questão 2: " + RetornaQuantidadeProdutoMenorQue50());
             WriteLine("Questão 3: " + RetornaMediaProdutosInativos());
             WriteLine("Questão 4: " + RetornaPrimeiroProdutosMenor10());
             WriteLine("Questão 5: " + RetornaUltimoProduto().ToString());
-            
             WriteLine("Questão 6: ");
             Write("Qual o id? ");
             int id = Convert.ToInt32(ReadLine());
@@ -106,5 +103,4 @@ namespace TP.Aula06.Linq
             AlterarValor(id, valor);
         }
     }
-
 }
