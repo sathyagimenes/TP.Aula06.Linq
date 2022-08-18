@@ -47,14 +47,8 @@ namespace TP.Aula06.Linq
         //primeiro produto com valor inferior à 10 reais.Retorne nulo se não existir.
         public static string RetornaPrimeiroProdutosMenor10()
         {
-            try
-            {
-                return listaProdutos.FirstOrDefault(prod => prod.Valor < 10).ToString();
-            }
-            catch (Exception)
-            {
-                return "null";
-            }
+                return listaProdutos.Where(prod => prod.Valor < 10)
+                    .Select(prod => prod.Nome).FirstOrDefault();
         }
 
         //Questão 5
@@ -71,15 +65,15 @@ namespace TP.Aula06.Linq
         // valor e irá realizar a atualização. Caso o Id não exista, exiba uma mensagem.
         public static void AlterarValor(int id, decimal valor)
         {
-            try
-            {
-                Produto prod = listaProdutos.Where(prod => prod.Id == id).SingleOrDefault();
-                prod.Valor = valor;
-                WriteLine("Alteração realizada com sucesso");
-            }
-            catch (Exception)
+            Produto prod = listaProdutos.Where(prod => prod.Id == id).Select(prod => prod).SingleOrDefault();
+            if (prod == null)
             {
                 WriteLine($"Id {id} não encontrado");
+            }
+            else
+            {
+                prod.Valor = valor;
+                WriteLine("Alteração realizada com sucesso");
             }
         }
 
